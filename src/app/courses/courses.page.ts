@@ -1,3 +1,4 @@
+import { Course } from './../models/course.model';
 import { CourseService } from './../services/course.service';
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
@@ -8,7 +9,7 @@ import { Router } from '@angular/router';
   styleUrls: ['./courses.page.scss'],
 })
 export class CoursesPage implements OnInit {
-  courses = [];
+  courses: Course[];
 
   constructor(
     private courseService: CourseService,
@@ -18,9 +19,4 @@ export class CoursesPage implements OnInit {
   ngOnInit() { 
     this.courses = this.courseService.getCourses();
   }
-
-  showDetails(id) {
-    this.router.navigate(['/course-details', id]);
-  }
-
 }

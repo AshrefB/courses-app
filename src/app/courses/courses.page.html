@@ -4,7 +4,7 @@
       <ion-menu-button autoHide="false"></ion-menu-button>
     </ion-buttons>
     <ion-buttons slot="end">
-      <ion-button routerLink="/add-course">
+      <ion-button [routerLink]="['/add-course']">
         <ion-icon slot="icon-only" name="add-circle-outline"></ion-icon>
       </ion-button>
     </ion-buttons>
@@ -17,7 +17,7 @@
     <ion-col>
       <h5 class="ion-margin-horizontal">We propose these new courses:</h5>
       <ion-list>
-        <ion-item *ngFor="let course of courses" button (click)="showDetails(course.id)">
+        <ion-item *ngFor="let course of courses" [routerLink]="['/course-details', course.id]">
           <ion-avatar slot="start">
             <ion-img [src]="course.image"></ion-img>
           </ion-avatar>

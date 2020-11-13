@@ -1,3 +1,4 @@
+import { Course } from './../models/course.model';
 import { CourseService } from './../services/course.service';
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
@@ -9,7 +10,7 @@ import { AlertController } from '@ionic/angular';
   styleUrls: ['./course-details.page.scss'],
 })
 export class CourseDetailsPage implements OnInit {
-  course = {};
+  course: Course = new Course(null, null, null, null, null);
 
   constructor(
     private courseService: CourseService,

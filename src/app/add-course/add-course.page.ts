@@ -1,6 +1,7 @@
 import { CourseService } from './../services/course.service';
-import { Component, EventEmitter, OnInit, Output } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { Course } from '../models/course.model';
 
 @Component({
   selector: 'app-add-course',
@@ -8,7 +9,7 @@ import { Router } from '@angular/router';
   styleUrls: ['./add-course.page.scss'],
 })
 export class AddCoursePage implements OnInit {
-  course = {};
+  course: Course = new Course(null, null, null, null, null);
 
   constructor(
     private courseService: CourseService,
